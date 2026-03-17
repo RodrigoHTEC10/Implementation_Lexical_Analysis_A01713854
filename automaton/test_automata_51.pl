@@ -9,8 +9,8 @@
         % Must have 1 before 2 always.
         % End in 002
 
-%Loading Automata File (automata.pl)
-:- ["automata"].
+%Loading Automata File (automata_51.pl)
+:- ["automata_51"].
 
 %Test Cases Definition
     %As any test with less than three digits would be rejected by the automata rules,
@@ -21,206 +21,206 @@
 test_0:-
     write("Starting Rejected Combinations: \n ----------"),
     write("\n Test 0 \n"),
-    parseDFA([]).
+    parseDFA('').
 
 test_1:-
     write("\n Test 1 \n"),
-    parseDFA([2]).
+    parseDFA('2').
 
 test_2:-
     write("\n Test 2 \n"),
-    parseDFA([0,0,2]).
+    parseDFA('002').
 
 test_3:-
     write("\n Test 3 \n"),
-    parseDFA([1,1,1,0,0,2,2]).
+    parseDFA('1110022').
 
 test_4:-
     write("\n Test 4 \n"),
-    parseDFA([0,0,1,2,1,0,1,2,0,1,0]).
+    parseDFA('00121012010').
 
 test_5:-
     write("\n Test 5 \n"),
-    parseDFA([0,1,1,1,2,1,2,1,1,0]).
+    parseDFA('0111212110').
 
 test_6:-
     write("\n Test 6 \n"),
-    parseDFA([0,0,0,1,2,2,2,1,1,2,1,0]).
+    parseDFA('000122211210').
 
 test_7:-
     write("\n Test 7 \n"),
-    parseDFA([0,1,2,2,2,1,2,1,0,0,2]).
+    parseDFA('01222121002').
 
 test_8:-
     write("\n Test 8 \n"),
-    parseDFA([2,0,1,1,2,1,1,2,1,0,1]).
+    parseDFA('20112112101').
 
 test_9:-
     write("\n Test 9 \n"),
-    parseDFA([0,1,1,2,1,1,2,1,1,0,0]).
+    parseDFA('01121121100').
 
 test_10:-
     write("\n Test 10 \n"),
-    parseDFA([0,0,1,2,1,2,0,0,2]).
+    parseDFA('001212002').
 
 test_11:-
     write("\n Test 11 \n"),
-    parseDFA([0,0,1,1,1,2,1,1,2,1,0]).
+    parseDFA('00111211210').
 
 test_12:-
     write("\n Test 12 \n"),
-    parseDFA([2,2,1,1,2,1,0,0,1]).
+    parseDFA('221121001').
 
 test_13:-
     write("\n Test 13 \n"),
-    parseDFA([0,0,1,1,2,1,1,2,1,1,0]).
+    parseDFA('00112112110').
 
 test_14:-
     write("\n Test 14 \n"),
-    parseDFA([0,1,1,2,1,1,1,2,1,0,0,0,1]).
+    parseDFA('0112111210001').
 
 test_15:-
     write("\n Test 15 \n"),
-    parseDFA([0,0,1,0,2,1,0,2,1,1,0,0,2,1]).
+    parseDFA('00102102110021').
 
 test_16:-
     write("\n Test 16 \n"),
-    parseDFA([0,1,2,2,1,1,2,1,2,1,0,0,2]).
+    parseDFA('0122112121002').
 
 test_17:-
     write("\n Test 17 \n"),
-    parseDFA([0,0,1,1,2,1,2,1,1,0]).
+    parseDFA('0011212110').
 
 test_18:-
     write("\n Test 18 \n"),
-    parseDFA([2,1,2,1,1,2,1,0,0,2]).
+    parseDFA('2121121002').
 
 test_19:-
     write("\n Test 19 \n"),
-    parseDFA([0,0,1,1,1,2,1,2,1,1]).
+    parseDFA('0011121211').
 
 test_20:-
     write("\n Test 20 \n"),
-    parseDFA([2,0,0,1,1,2,1,1,2,1]).
+    parseDFA('2001121121').
 
 test_21:-
     write("\n Test 21 \n"),
-    parseDFA([0,0,0,0,0,0,2,1,0,0,2]).
+    parseDFA('00000021002').
 
 test_22:-
     write("\n Test 22 \n"),
-    parseDFA([0,1,1,2,1,1,2,1,0]).
+    parseDFA('011211210').
 
 test_23:-
     write("\n Test 23 \n"),
-    parseDFA([0,0,1,2,1,1,1,2,1,0]).
+    parseDFA('0012111210').
 
 test_24:-
     write("\n Test 24 \n"),
-    parseDFA([0,1,2,2,1,2,1,1,2,1,0,0,2]).
+    parseDFA('0122121121002').
 
     %Test Cases with accepted combinations.
 
 test_25:-
     write("\nStarting Accepted Combinations: \n ----------"),
     write("\n Test 25 \n"),
-    parseDFA([1,0,0,2]).
+    parseDFA('1002').
 
 test_26:-
     write("\n Test 26 \n"),
-    parseDFA([1,1,1,0,0,0,2]).
+    parseDFA('1110002').
 
 test_27:-
     write("\n Test 27 \n"),
-    parseDFA([0,0,0,1,1,1,1,1,0,0,2]).
+    parseDFA('00011111002').
 
 test_28:-
     write("\n Test 28 \n"),
-    parseDFA([1,2,1,2,1,1,2,1,0,0,2]).
+    parseDFA('12121121002').
 
 test_29:-
     write("\n Test 29 \n"),
-    parseDFA([0,1,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('011211211002').
 
 test_30:-
     write("\n Test 30 \n"),
-    parseDFA([0,0,1,2,1,1,2,1,1,1,0,0,2]).
+    parseDFA('0012112111002').
 
 test_31:-
     write("\n Test 31 \n"),
-    parseDFA([0,1,2,1,1,2,1,1,2,1,0,0,2]).
+    parseDFA('0121121121002').
 
 test_32:-
     write("\n Test 32 \n"),
-    parseDFA([0,1,1,2,1,1,1,2,1,1,0,0,2]).
+    parseDFA('0112111211002').
 
 test_33:-
     write("\n Test 33 \n"),
-    parseDFA([0,0,1,2,1,1,2,1,2,1,0,0,2]).
+    parseDFA('0012112121002').
 
 test_34:-
     write("\n Test 34 \n"),
-    parseDFA([1,1,2,1,1,2,1,2,1,1,0,0,2]).
+    parseDFA('1121121211002').
 
 test_35:-
     write("\n Test 35 \n"),
-    parseDFA([1,0,1,2,0,1,2,1,1,0,0,2,1,0,0,2]).
+    parseDFA('1012012110021002').
 
 test_36:-
     write("\n Test 36 \n"),
-    parseDFA([0,0,1,1,2,1,1,2,1,1,2,1,0,0,2]).
+    parseDFA('001121121121002').
 
 test_37:-
     write("\n Test 37 \n"),
-    parseDFA([1,2,1,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('1211211211002').
 
 test_38:-
     write("\n Test 38 \n"),
-    parseDFA([0,1,1,2,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('01121211211002').
 
 test_39:-
     write("\n Test 39 \n"),
-    parseDFA([0,0,0,0,1,2,1,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('00001211211211002').
 
 test_40:-
     write("\n Test 40 \n"),
-    parseDFA([1,1,1,2,1,1,2,1,2,1,1,0,0,2]).
+    parseDFA('11121121211002').
 
 test_41:-
     write("\n Test 41 \n"),
-    parseDFA([0,1,2,1,1,2,1,2,1,1,2,1,0,0,2]).
+    parseDFA('012112121121002').
 
 test_42:-
     write("\n Test 42 \n"),
-    parseDFA([0,0,1,1,2,1,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('0011211211211002').
 
 test_43:-
     write("\n Test 43 \n"),
-    parseDFA([1,2,1,2,1,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('121211211211002').
 
 test_44:-
     write("\n Test 44 \n"),
-    parseDFA([0,1,1,2,1,1,2,1,1,2,1,1,2,1,0,0,0,0,0,0,2]).
+    parseDFA('011211211211210000002').
 
 test_45:-
     write("\n Test 45 \n"),
-    parseDFA([0,0,1,2,1,1,2,1,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('001211211211211002').
 
 test_46:-
     write("\n Test 46 \n"),
-    parseDFA([1,1,2,1,1,2,1,0,0,1,2,1,0,1,2,1,1,2,1,0,0,2]).
+    parseDFA('1121121001210121121002').
 
 test_47:-
     write("\n Test 47 \n"),
-    parseDFA([0,1,2,1,1,2,1,1,2,1,1,2,1,1,0,0,2]).
+    parseDFA('01211211211211002').
 
 test_48:-
     write("\n Test 48 \n"),
-    parseDFA([0,0,1,1,2,1,1,2,1,1,2,1,1,2,1,0,0,2]).
+    parseDFA('001121121121121002').
 
 test_49:-
     write("\n Test 49 \n"),
-    parseDFA([1,2,1,1,2,1,0,1,2,1,1,2,1,1,2,1,1,0,0,2,1,0,0,2,1,0,0,2]).
+    parseDFA('1211210121121121100210021002').
 
 
 %Start testing function:
