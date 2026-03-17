@@ -287,8 +287,3 @@ Cox, R. (2007) Regular Expression Matching Can Be Simple And Fast
 Glenn Brookshear, J. (1989). Finite Automata and Regular Languages. In Apt, A. & McCormick, M. *Theory of Computation. Formal Languages, Automata, and Complexity* (pp. 21-72). The Benjamin/Commings Publishing Company Inc.
 
 4.3. Comparing algorithms — CS3 data structures & algorithms. (s/f). Cs.vt.edu. Obtained from https://opendsa-server.cs.vt.edu/ODSA/Books/CS3/html/AnalIntro.html
-
-
-<style type="text/css">
- .tab { margin-left: 40px; }
-</style>
