@@ -63,6 +63,10 @@ During the development of the current evidence the simplified DFA was created fi
 
 The automaton was programmed in Prolog based on the following transition table:
 
+<div align=center>
+<img width="600" alt="Screenshot 2026-03-17 071708" src="https://github.com/user-attachments/assets/af68b5a1-2b23-4e6a-a6f0-a187ed76e4b8" />
+</div>
+
 <p align=center> DFA Transition Table</p>
 
 Supporting this knowledge base with the function provided by the professor Benjamín Valdés Aguirre in the **automata and prolog notes** called <code>parseDFA</code>, the automata was complete thanks to the properties and backtracking native from Prolog.
