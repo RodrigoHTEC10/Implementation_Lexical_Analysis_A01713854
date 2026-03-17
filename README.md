@@ -2,7 +2,7 @@
 
 Author: Rodrigo Alejandro Hurtado Cortés - A01713854
 
-Date: March 16th, 2026
+Date: March 17th, 2026
 
 # Introduction
 **Lexical Analysis** is the process of scanning an input string *w* whose characters belong to the concrete alphabet **Σ** (*w* ∈ **Σ\***), 
@@ -93,26 +93,26 @@ Additionally, the automaton was tested with 50 test cases (25 rejected and 25 ac
 Testing examples:
 **No. 5 - Rejected**
 ```Prolog
-[0,1,1,1,2,1,2,1,1,0].
+'0111212110'
 ```
 The string does not end with 002, although the first rule of the language is followed.
 
 
 **No. 16 - Rejected**
 ```Prolog
-[0,1,2,2,1,1,2,1,2,1,0,0,2]
+'0122112121002'
 ```
 Although the string ends with 002, in the 3rd position of the array (starting from 0) there are two consecutive 2, breaking the first rule fo the language.
 
 **No. 25 - Accepted**
 ```Prolog
-[1,0,0,2]
+'1002'
 ```
 Least acceptable string. It accomplishes to follow both rules exactly as there is only a 1 before the termination 002 whose 2 requires a previous 1.
 
 **No. 47 - Accepted**
 ```Prolog
-[0,1,2,1,1,2,1,1,2,1,1,2,1,1,0,0,2]
+'01211211211211002'
 ```
 The sequence of 1 and 2 presented in the string do not break the first rule of the language as there is at least a 1 before each 2 including the termination 002.
 
