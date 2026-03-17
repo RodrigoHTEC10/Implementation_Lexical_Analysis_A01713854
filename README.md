@@ -53,9 +53,9 @@ During the development of the current evidence the simplified DFA was created fi
 </div>
 
 <p align=center> <i>Simplified Deterministic Finite Automaton - Transition diagram </i></p>
-    
+
 <div align=center>
-<img width="600"  alt="automata_51-Fully Defined DFA drawio" src="https://github.com/user-attachments/assets/3839863b-35ba-449c-be99-c7d70e1ddf88" />
+<img width="600" alt="automata_51-Fully Defined DFA drawio" src="https://github.com/user-attachments/assets/e4797ed1-3313-473e-8838-ce6b9f4636d9" />
 </div>
 
 <p align=center> <i>Fully Defined Deterministic Finite Automaton - Transition diagram</i></p>
@@ -64,7 +64,7 @@ During the development of the current evidence the simplified DFA was created fi
 The automaton was programmed in Prolog based on the following transition table:
 
 <div align=center>
-<img width="600" alt="Screenshot 2026-03-17 071708" src="https://github.com/user-attachments/assets/af68b5a1-2b23-4e6a-a6f0-a187ed76e4b8" />
+<img width="450" alt="Screenshot 2026-03-17 071708" src="https://github.com/user-attachments/assets/af68b5a1-2b23-4e6a-a6f0-a187ed76e4b8" />
 </div>
 
 <p align=center> DFA Transition Table</p>
