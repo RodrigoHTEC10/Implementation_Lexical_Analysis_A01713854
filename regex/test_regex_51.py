@@ -1,4 +1,20 @@
-import regex_51
+"""
+Author: Rodrigo Alejandro Hurtado Cortes
+Date: March 16th, 2026
+
+Title: Regular Expression Testing
+
+Description of the Regular Language:
+    Alphabet:{0,1,2}
+    Rules:
+        Must have 1 before 2 always.
+        End in 002
+
+Regular Expression:
+^{0|1}*(1{0|1}*2)* 1{0|1}*002$
+
+"""
+import Implementation_Lexical_Analysis_A01713854.regex.regex_51 as regex_51
 
 rejected_tests = [
 "",

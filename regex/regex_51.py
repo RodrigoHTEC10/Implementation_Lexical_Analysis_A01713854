@@ -2,9 +2,9 @@
 Author: Rodrigo Alejandro Hurtado Cortes
 Date: March 16th, 2026
 
-Title: Numeric Automaton No.51
+Title: Regular Expression Implementation
 
-Description of the Automaton:
+Description of the Regular Language:
     Alphabet:{0,1,2}
     Rules:
         Must have 1 before 2 always.
@@ -12,20 +12,20 @@ Description of the Automaton:
 
 Regular Expression implementation:
 Quantifiers used: 
-* (0 or more)
+    * (0 or more)
 
 Metacharacters:
-| (or)
+    | (or)
 
 Groups:
-( ) (Group)
+    ( ) (Group)
 
 Anchors:
-^ (start of a string)
-$ (end of a string)
+    ^ (start of a string)
+    $ (end of a string)
 
 Regular Expression:
-^{0|1}*(1{0|1}*2)* 1{0|1}*002$
+    ^{0|1}*(1{0|1}*2)* 1{0|1}*002$
 
 """
 

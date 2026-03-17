@@ -3,7 +3,7 @@
 
 %Title: Numeric Automaton No.51
 
-% Description of the Automaton:
+% Description of the Regular Language:
     %Alphabet:{0,1,2}
     %Rules:
         % Must have 1 before 2 always.
