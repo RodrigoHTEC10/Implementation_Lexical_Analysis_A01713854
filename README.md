@@ -66,7 +66,7 @@ The automaton was programmed in Prolog based on the following transition table:
 <p align=center> <i>Simplified Deterministic Finite Automaton - Transition diagram </i></p>
 
 <div align=center>
-<img width="600" alt="automata_51-Fully Defined DFA drawio" src="https://github.com/user-attachments/assets/e4797ed1-3313-473e-8838-ce6b9f4636d9" />
+<img width="600" alt="automata_51-Fully Defined DFA drawio" src="https://github.com/user-attachments/assets/ee3a00ad-7a5f-4198-8231-2242a8ed45a0" />
 </div>
 
 <p align=center> <i>Fully Defined Deterministic Finite Automaton - Transition diagram</i></p>
