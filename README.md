@@ -50,6 +50,15 @@ Both pictures, the DFA fully defined and simplified DFA of the **1st iteration**
 During the development of the current evidence the simplified DFA was created first based completely on the rules of the regular language No. 51; afterwards, the fully defined DFA was created to fullfill the formal definition proposed by Glenn Brookshear, despite the recognition that these automaton versions are always ommited for simplicity.
 
 ##### 1st Iteration
+
+The automaton was programmed in Prolog based on the following transition table:
+
+<div align=center>
+<img width="450" alt="Screenshot 2026-03-17 071708" src="https://github.com/user-attachments/assets/af68b5a1-2b23-4e6a-a6f0-a187ed76e4b8" />
+</div>
+
+<p align=center> DFA Transition Table</p>
+
 <div align=center>
 <img width="600" alt="automata_51-Simplified DFA drawio" src="https://github.com/user-attachments/assets/45625c4e-316b-4bba-ac15-e2b5c6b290f1" />
 </div>
@@ -62,14 +71,16 @@ During the development of the current evidence the simplified DFA was created fi
 
 <p align=center> <i>Fully Defined Deterministic Finite Automaton - Transition diagram</i></p>
 
+As it can be observed, in the created automaton:
+- Q1 is the initial state.
+- Q6 is the only accept state.
+- Q1 receives all those 0s before any 1 and after any 2, as to write another 2 , a 1 is required.
+- Q2 receives all 1s as it has a direct arc to Q3 through a 2 or a possibility to finish the string with a 002 if a 0 is used, passing to Q4 instead.
+- The connection between Q1, Q2 and Q3 regulate all those string combinations that does not involve 002, always respecting the rule that there must be a 1 before a 2.
+- The connection between Q4, Q5 and Q6 regulates the acceptance of the string ending with 002, a combination that can be accomplished always comming from a previous 1 (Q2) even if several 0s are between them (iterative arc in Q5). 
+- Any ocurrance of a 0 or 1 after a combination 002 is returned respectively to the states Q1 or Q2 as it corresponds.
+- The state Q7 corresponds to a state that contains the analysis if one of the regular language rules has been broken previously. As it contains the remaining string and it is not an accept state, guarantees an automatic rejection and no way back to the automata flow.
 
-The automaton was programmed in Prolog based on the following transition table:
-
-<div align=center>
-<img width="450" alt="Screenshot 2026-03-17 071708" src="https://github.com/user-attachments/assets/af68b5a1-2b23-4e6a-a6f0-a187ed76e4b8" />
-</div>
-
-<p align=center> DFA Transition Table</p>
 
 Supporting this knowledge base with the function provided by the professor Benjamín Valdés Aguirre in the **automata and prolog notes** called <code>parseDFA</code>, the automata was complete thanks to the properties and backtracking native from Prolog.
 
@@ -77,7 +88,7 @@ This automaton can be consulted in the file <code>automata_51.pl</code>
 
 #### Testing
 
-Additionally, the automaton was tested with 50 test cases (25 rejected and 25 accepted) which can be performed in the file <code>test_automata_51.pl</code> by running the function <code>start.</code>
+Additionally, the automaton was tested with 50 test cases (25 rejected and 25 accepted for a wider testing pool) which can be performed in the file <code>test_automata_51.pl</code> by running the function <code>start.</code>
 
 Testing examples:
 **No. 5 - Rejected**
@@ -184,7 +195,7 @@ The regular expression designed for the Regular Language No. 51 was originally d
         (0|1)* (1 (0|1)* 2)* (1 (0|1)* 002)
 
 #### Testing
-Similarly to the automaton, the same 50 test cases (25 rejected and 25 accepted) where tested for the regular expression. These can be found in the <code>test_regex_51.py</code> file by running it, as it automatically executes the function <code>test()</code>.
+Similarly to the automaton, the same 50 test cases (25 rejected and 25 accepted) where tested for the regular expression in order to proof the consistency between both representations as both are designed for the same language. These can be found in the <code>test_regex_51.py</code> file by running it, as it automatically executes the function <code>test()</code>.
 
 Testing examples:
 **No. 5 - Rejected**
@@ -221,12 +232,48 @@ Testing examples:
 
 
 ## Computational Comparison
-### Theory
 
-### Method
+In order to perform a valuable and realiable comparison between two computational methods, the greatest number of equal conditions must be met between them. 
+
+As the representations analyzed in the present evidence were implemented in different programming languages greatly divided because of their execution models, two comparisons will be performed, one based on the model theory proposed by the Formal Language Theory and another focusing on the effects their implementation has over the theory; in order to select a better representation of the formal language No.51 while reducing the inequalities between them.
+
+Important concepts to keep in mind:
+- <code>n</code>: Number of characters in the analyzed string.
+- <code>m</code>: Number of states in the defined automaton.
+
+### Time Complexity
+#### DFA
+##### Formal Language Theory
+- O(n). By definition, the transition process between one state and the other depends completely on the current character and the current state (δ). 
+
+    Within a fully defined DFA, as each state of the automaton has one and only one arc leaving from each symbol of the alphabet (even if it goes to the state Q7, which concentrate the string until it finishes once a rule of the language has been broken), the traversion of the DFA depends only on the number of characters of the string, giving a linear time complexity.
+
+##### Prolog implementation
+- O(n). Thanks to the properties of traversion through the recursive function <code>parseDFA()</code> based on the knowledge base of the automaton and the automatic error or rejection the programming language returns if a matching result is not found in such knowledge base (for example a 2 getting out of Q1); the implementation in Prolog keeps the same theorical time complexity.
+
+#### Regular Expression
+##### Formal Language Theory
+- O(n) ideally - O(n*m). The implementation of a regular expression is done through its convertion to an automaton. Depeding on whether a Deterministic or Nondeterministic automaton is implemented from the regex translation, the time complexity can increase or decrease, being the lowest at Deterministic and the highest at Nondeterministic as this requires backtracking for its implentation; which involves going back in the automata to analyze other possible paths for which the string is accepted by the NFA.
+
+##### Python implementation
+- O(n*m) typically, could be higher for worst scenarios. For the implementation of the regular expression in python the library <code>re</code> was used. This library uses a Nondeterministic Finite Autonata with backtracking (similarly to Pearl) which gives a higher time complexity in exchange for a greater flexibility compared to other engines to handle regular expression matching compared to DFA (Cox, R, 2007).
+
+### Space Complexity
+#### DFA
+- O(1) as the DFA in Prolog only stores temporarily the current state and follows the arc based on the current char in order to move to the next state. This time complexity can increase to O(n) in the worst case if an inneficient algorithm has been designed to parse the automaton.
+
+#### Regular Expression
+
+- O(n) - O(n^2) as the implementation of the regular expression through the Nondeterministic Finite Automaton with backtracking stores the traversed states of the automaton in order to go back if necessary during the analysis or comparison. 
+
 ### Results
+Based on the previous analysis, a more efficient computational method to realize a lexical analysis is the implementation of a Deterministic Finite Automaton over the use of Regular Expressions; based on both time and space complexity. However, the usage of an engine that translate regex into a DFA would be ideal to approximate the time complexity between both representations, being even able to equal the efficiency of merely the DFA.
+
+## Conclusion
+
 
 ## References
+
 
 <style type="text/css">
  .tab { margin-left: 40px; }
