@@ -48,9 +48,17 @@ Both pictures, the DFA fully defined and simplified DFA of the **1st iteration**
 During the development of the current evidence the simplified DFA was created first based completely on the rules of the regular language No. 51; afterwards, the fully defined DFA was created to fullfill the formal definition proposed by Glenn Brookshear, despite the recognition that these automaton versions are always ommited for simplicity.
 
 ##### 1st Iteration
-<p align=center> Simplified Deterministic Finite Automaton - Transition diagram </p>
+<div align=center>
+<img width="600" alt="automata_51-Simplified DFA drawio" src="https://github.com/user-attachments/assets/45625c4e-316b-4bba-ac15-e2b5c6b290f1" />
+</div>
 
-<p align=center> Fully Defined Deterministic Finite Automaton - Transition diagram</p>
+<p align=center> <i>Simplified Deterministic Finite Automaton - Transition diagram </i></p>
+    
+<div align=center>
+<img width="600"  alt="automata_51-Fully Defined DFA drawio" src="https://github.com/user-attachments/assets/3839863b-35ba-449c-be99-c7d70e1ddf88" />
+</div>
+
+<p align=center> <i>Fully Defined Deterministic Finite Automaton - Transition diagram</i></p>
 
 
 The automaton was programmed in Prolog based on the following transition table:
