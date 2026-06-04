@@ -2,7 +2,7 @@
 
 Author: Rodrigo Alejandro Hurtado Cortés - A01713854
 
-Date: March 17th, 2026
+Date: June 4th, 2026
 
 # Introduction
 **Lexical Analysis** is the process of scanning an input string *w* whose characters belong to the concrete alphabet **Σ** (*w* ∈ **Σ\***), 
